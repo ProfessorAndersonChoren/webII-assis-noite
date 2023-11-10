@@ -1,7 +1,10 @@
 <?php
+
+namespace QI\SistemaDeChamados\Controller;
+
 session_start();
 
-switch($_GET["operation"]){
+switch ($_GET["operation"]) {
     case "login":
         login();
         break;
@@ -14,7 +17,8 @@ switch($_GET["operation"]){
         exit;
 }
 
-function login(){
+function login()
+{
     if (empty($_POST)) {
         $_SESSION["msg_error"] = "Ops, houve um erro inesperado!!!";
         header("location:../View/message.php");
@@ -53,8 +57,9 @@ function login(){
     exit;
 }
 
-function logout(){
+function logout()
+{
     unset($_SESSION["user_data"]);
-    header("location:../index.html");
+    header("location:../../index.html");
     exit;
 }

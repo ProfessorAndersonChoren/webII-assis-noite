@@ -1,0 +1,17 @@
+{
+  "name": "qi/sistema_de_chamados",
+  "type": "project",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "QI\\SistemaDeChamados\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "ProfessorAndersonChoren",
+      "email": "anderson.choren@faqi.edu.br"
+    }
+  ],
+  "require": {}
+}
