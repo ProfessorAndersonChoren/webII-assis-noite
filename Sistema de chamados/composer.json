@@ -5,7 +5,10 @@
   "autoload": {
     "psr-4": {
       "QI\\SistemaDeChamados\\": "src/"
-    }
+    },
+    "files": [
+      "Config.php"
+    ]
   },
   "authors": [
     {
