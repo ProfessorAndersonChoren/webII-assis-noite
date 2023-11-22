@@ -15,4 +15,12 @@ class Call{
         $this->classification = $classification;
         $this->description = $description;
     }
+
+    public function __get($attribute){
+        return $this->$attribute;
+    }
+
+    public function __set($attribute,$value){
+        $this->$attribute = $value;
+    }
 }

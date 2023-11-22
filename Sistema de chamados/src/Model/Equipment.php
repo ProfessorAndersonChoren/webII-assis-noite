@@ -14,4 +14,14 @@ class Equipment
         $this->floor = $floor;
         $this->room = $room;
     }
+
+    public function __get($attribute)
+    {
+        return $this->$attribute;
+    }
+
+    public function __set($attribute, $value)
+    {
+        $this->$attribute = $value;
+    }
 }

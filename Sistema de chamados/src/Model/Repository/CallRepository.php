@@ -23,5 +23,6 @@ class CallRepository{
         $stmt->bindParam(3, $call->classification);
         $stmt->bindParam(4, $call->description);
         $stmt->bindParam(5, $call->notes);
+        return $stmt->execute();
     }
 }
