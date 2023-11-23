@@ -30,6 +30,16 @@
         unset($_SESSION["msg_warning"]);
     endif;
     ?>
+    <?php
+        if(!empty($_SESSION["msg_success"])):
+    ?>
+    <div class="alert alert-success">
+        <p><?= $_SESSION["msg_success"] ?></p>
+    </div>
+    <?php
+    unset($_SESSION["msg_success"]);
+    endif;
+    ?>
 </body>
 
 </html>
