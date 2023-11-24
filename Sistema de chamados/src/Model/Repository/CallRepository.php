@@ -2,6 +2,7 @@
 
 namespace QI\SistemaDeChamados\Model\Repository;
 
+use PDO;
 use QI\SistemaDeChamados\Model\Call;
 
 class CallRepository{
@@ -24,5 +25,10 @@ class CallRepository{
         $stmt->bindParam(4, $call->description);
         $stmt->bindParam(5, $call->notes);
         return $stmt->execute();
+    }
+
+    public function findAll(){
+        $stmt = $this->connection->query("select c.*,u.name,u.email from calls c inner join users u on c.user_id = u.id;");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

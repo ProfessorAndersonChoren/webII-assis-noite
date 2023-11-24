@@ -15,6 +15,9 @@ switch ($_GET["operation"]){
     case "insert":
         insert();
         break;
+    case "findAll":
+        findAll();
+        break;
     default:
         $_SESSION["msg_error"] = "Operação inválida!!!";
         header("location:../View/message.php");
@@ -63,4 +66,10 @@ function insert(){
         header("location:../View/message.php");
         exit;
     }
+}
+
+function findAll(){
+    $call_repository = new CallRepository();
+    $_SESSION["list_of_calls"] = $call_repository->findAll();
+    header("location:../View/list_of_calls.php");
 }
