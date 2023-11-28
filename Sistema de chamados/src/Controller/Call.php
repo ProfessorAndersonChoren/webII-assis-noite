@@ -71,5 +71,5 @@ function insert(){
 function findAll(){
     $call_repository = new CallRepository();
     $_SESSION["list_of_calls"] = $call_repository->findAll();
-    header("location:../View/list_of_calls.php");
+    header("location:../View/list-of-calls.php");
 }
