@@ -29,9 +29,45 @@
                 <th>Classificação</th>
             </thead>
             <tbody>
-                
+                <?php
+                if (empty($_SESSION["list_of_calls"])) :
+                ?>
+                    <td colspan="7">
+                        Não existem chamados cadastrados!!!
+                    </td>
+                <?php
+                endif;
+                foreach ($_SESSION["list_of_calls"] as $call) :
+                ?>
+                    <tr>
+                        <td>
+                            <?= $call["id"] ?>
+                        </td>
+                        <td>
+                            <?= $call["name"] ?>
+                        </td>
+                        <td>
+                            <?= $call["email"] ?>
+                        </td>
+                        <td>
+                            <?= $call["equipment_id"] ?>
+                        </td>
+                        <td>
+                            <?= $call["description"] ?>
+                        </td>
+                        <td>
+                            <?= $call["notes"] ?>
+                        </td>
+                        <td>
+                            <?= $call["classification"] ?>
+                        </td>
+                    </tr>
+                <?php
+                endforeach;
+                ?>
             </tbody>
         </table>
     </main>
 </body>
+
 </html>
