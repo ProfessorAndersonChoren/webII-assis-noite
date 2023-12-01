@@ -66,8 +66,11 @@
                         <td>
                             <div class="btn-group">
                                 <a href="../Controller/Call.php?operation=findOne&code=<?= $call["id"] ?>" class="btn btn-warning">
-                                <i class="bi bi-pencil"></i>
-                            </a>
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <a href="../Controller/Call.php?operation=delete&code=<?= $call["id"] ?>" class="btn btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </a>
                             </div>
                         </td>
                     </tr>
