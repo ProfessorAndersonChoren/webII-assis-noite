@@ -26,8 +26,8 @@
                 <th>Email do usuário</th>
                 <th>Número do equipamento</th>
                 <th>Descrição</th>
-                <th>Observações</th>
                 <th>Classificação</th>
+                <th>Observações</th>
                 <th>Ações</th>
             </thead>
             <tbody>
@@ -58,10 +58,10 @@
                             <?= $call["description"] ?>
                         </td>
                         <td>
-                            <?= $call["notes"] ?>
+                            <?= $call["classification"] ?>
                         </td>
                         <td>
-                            <?= $call["classification"] ?>
+                            <?= ($call["notes"])? $call["notes"]:"Não existem observações" ?>
                         </td>
                         <td>
                             <div class="btn-group">
