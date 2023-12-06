@@ -37,4 +37,23 @@ class CallRepository{
         $stmt->bindParam(1, $id);
         return $stmt->execute();
     }
+
+    public function findOne($id){
+        $stmt = $this->connection->query("select c.id,c.equipment_id,c.description,c.notes,u.name,u.email,e.floor,e.room from calls c inner join users u on c.user_id = u.id inner join equipments e on c.equipment_id = e.id where c.id = $id;");
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    /**
+     * Update a call in database
+     * @param Call $call
+     * @return bool
+     */
+    public function update($call){
+        $stmt = $this->connection->prepare("update calls set classification = ?,notes = ?, description = ? where id = ?");
+        $stmt->bindParam(1, $call->classification);
+        $stmt->bindParam(2, $call->notes);
+        $stmt->bindParam(3, $call->description);
+        $stmt->bindParam(4, $call->id);
+        return $stmt->execute();
+    }
 }
